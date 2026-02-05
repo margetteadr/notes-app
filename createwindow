@@ -1,0 +1,16 @@
+public static void main(String[] args) {
+         javax.swing.JFrame frame = new javax.swing.JFrame("Margette's Mini Window"); // Initialize frame
+    
+         javax.swing.JLabel label = new javax.swing.JLabel("I am levelling up my project!", javax.swing.SwingConstants.CENTER);
+    
+         frame.add(label);
+    
+         frame.setSize(900, 600);
+
+         frame.setLocationRelativeTo(null); // Center the window on the screen
+
+         frame.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
+
+         frame.getContentPane().setBackground(new java.awt.Color(235, 210, 255));
+
+         frame.setLayout(null);
