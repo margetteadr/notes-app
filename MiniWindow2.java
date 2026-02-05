@@ -1,0 +1,188 @@
+package extensions;
+
+import java.awt.*;
+import java.util.ArrayList;
+
+
+public class MiniWindow2 {
+
+public static void main(String[] args) {
+         javax.swing.JFrame frame = new javax.swing.JFrame("Margette's Mini Window"); // Initialize frame
+    
+         javax.swing.JLabel label = new javax.swing.JLabel("I am levelling up my project!", javax.swing.SwingConstants.CENTER);
+    
+         frame.add(label);
+    
+         frame.setSize(900, 600);
+
+         frame.setLocationRelativeTo(null); // Center the window on the screen
+
+         frame.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
+
+         frame.getContentPane().setBackground(new java.awt.Color(235, 210, 255));
+
+         frame.setLayout(null);
+
+         javax.swing.JLabel userLabel = new javax.swing.JLabel("Username:");
+            userLabel.setBounds(50, 50, 120, 30);
+            frame.add(userLabel);
+
+            javax.swing.JTextField userText = new javax.swing.JTextField();
+            userText.setBounds(180, 50, 200, 30);
+            frame.add(userText);
+
+            javax.swing.JLabel passLabel = new javax.swing.JLabel("Password:");
+            passLabel.setBounds(50, 100, 120, 30);
+            frame.add(passLabel);
+
+            javax.swing.JPasswordField passText = new javax.swing.JPasswordField();
+            passText.setBounds(180, 100, 200, 30);
+            frame.add(passText);
+
+            javax.swing.JButton loginButton = new javax.swing.JButton("Login");
+            loginButton.setBounds(180, 150, 100, 30);
+            frame.add(loginButton);
+            label.setFont(new java.awt.Font("Comic Sans MS", java.awt.Font.BOLD, 20));
+loginButton.setFont(new java.awt.Font("Comic Sans MS", java.awt.Font.PLAIN, 16));
+passLabel.setFont(new java.awt.Font("Comic Sans MS", java.awt.Font.BOLD, 16));
+passText.setFont(new java.awt.Font("Comic Sans MS", java.awt.Font.PLAIN, 16));
+userText.setFont(new java.awt.Font("Comic Sans MS", java.awt.Font.PLAIN, 16));
+userLabel.setFont(new java.awt.Font("Comic Sans MS", java.awt.Font.BOLD, 16));
+loginButton.setBackground(new java.awt.Color(200, 160, 255));
+loginButton.setForeground(java.awt.Color.WHITE);
+userLabel.setForeground(new java.awt.Color(130,80,180));
+passLabel.setForeground(new java.awt.Color(130,80,180));
+passText.setForeground(new java.awt.Color(130,80,180));
+userText.setForeground(new java.awt.Color(130,80,180));
+loginButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(150, 50, 200), 2, true));
+loginButton.setBorderPainted(false);
+loginButton.setFocusPainted(false);
+loginButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+loginButton.setToolTipText("Click to login"); 
+
+            loginButton.addActionListener(e -> {
+                String username = userText.getText();
+                @SuppressWarnings("deprecation")
+                String password = passText.getText();
+                if(username.equals("Margette") && password.equals("AIS123")) {
+                  javax.swing.JOptionPane.showMessageDialog(frame, "It's nice to see you, " + username + "! :)"); 
+
+                    frame.dispose(); // Close the login window
+                    openCrudWindow(); // Open the CRUD window
+                } else {
+                    javax.swing.JOptionPane.showMessageDialog(frame, "Oops! Wrong username or password, please try again!! D:");
+                }
+                
+            });
+        
+        frame.setVisible(true);
+        }
+
+
+
+
+static void openCrudWindow() {
+    javax.swing.JFrame crudFrame = new javax.swing.JFrame("Notes App");
+    crudFrame.setSize(900, 600);
+    crudFrame.setLocationRelativeTo(null);
+    crudFrame.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
+    crudFrame.getContentPane().setBackground(new java.awt.Color(230, 200, 255));
+    crudFrame.setLayout(null);
+
+    javax.swing.JLabel infoLabel = new javax.swing.JLabel(" Notes Application <3");
+    infoLabel.setFont(new java.awt.Font("Comic Sans MS", java.awt.Font.BOLD, 24));
+    infoLabel.setBounds(0, 10, 900, 40);
+    infoLabel.setForeground(new java.awt.Color (130,80,180));
+    crudFrame.add(infoLabel);
+
+javax.swing.JTextField noteInput = new javax.swing.JTextField();
+noteInput.setBounds(50,70,500,30);
+noteInput.setFont(new java.awt.Font("Comic Sans MS", java.awt.Font.PLAIN, 16));
+noteInput.setForeground(new java.awt.Color(130,80,180));
+noteInput.setSelectionColor(new java.awt.Color(220,190,255));
+crudFrame.add(noteInput);
+
+javax.swing.DefaultListModel<String> listModel = new javax.swing.DefaultListModel<>();
+javax.swing.JList<String> noteList = new javax.swing.JList<>(listModel);
+javax.swing.JScrollPane scrollPane = new javax.swing.JScrollPane(noteList);
+scrollPane.setBounds(50, 120, 500, 350);
+crudFrame.add(scrollPane);
+
+javax.swing.JButton addButton = new javax.swing.JButton("Add Note");
+addButton.setBounds(600, 120, 120, 30);
+addButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+addButton.setFont(new java.awt.Font("Comic Sans MS", java.awt.Font.PLAIN, 14));
+addButton.setForeground(Color.WHITE);
+addButton.setBackground(new java.awt.Color(200, 160, 255));
+addButton.setFocusPainted(false);
+crudFrame.add(addButton);
+
+javax.swing.JButton updatebutton = new javax.swing.JButton("Update Note");
+updatebutton.setBounds(600, 170, 120, 30);
+updatebutton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+updatebutton.setFont(new java.awt.Font("Comic Sans MS", java.awt.Font.PLAIN, 14));
+updatebutton.setForeground(Color.WHITE);
+updatebutton.setBackground(new java.awt.Color(200, 160, 255));
+updatebutton.setFocusPainted(false);
+crudFrame.add(updatebutton);
+
+javax.swing.JButton deleteButton = new javax.swing.JButton("Delete Note");
+deleteButton.setBounds(600, 220, 120, 30);
+deleteButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+deleteButton.setFont(new java.awt.Font("Comic Sans MS", java.awt.Font.PLAIN, 14));
+deleteButton.setForeground(Color.WHITE);
+deleteButton.setBackground(new java.awt.Color(200, 160, 255));
+deleteButton.setFocusPainted(false);
+crudFrame.add(deleteButton);
+
+// BUTTON ACTIONS
+java.util.ArrayList<String> notes = new ArrayList<>();
+
+addButton.addActionListener(e -> {
+    String note = noteInput.getText();
+    if(!note.isEmpty()) {
+        notes.add(note);
+        listModel.addElement(note);
+        noteInput.setText("");
+    }
+});
+updatebutton.addActionListener(e -> {
+    int index = noteList.getSelectedIndex();
+    if (index >= 0) {
+        String updatedNote = noteInput.getText();
+        if (!updatedNote.isEmpty()) {
+            notes.set(index, updatedNote);
+            listModel.set(index, updatedNote);
+            noteInput.setText("");
+        }
+
+    } else {
+        javax.swing.JOptionPane.showMessageDialog(crudFrame, "Please select a note to update!");
+
+    }
+});
+
+deleteButton.addActionListener(e -> {
+    int index = noteList.getSelectedIndex();
+    if (index >= 0) {
+        notes.remove(index);
+        listModel.remove(index);
+
+    } else {
+        javax.swing.JOptionPane.showMessageDialog(crudFrame, "Please select a note to delete!");
+
+    }
+});
+
+    crudFrame.setVisible(true); 
+
+}
+
+}
+
+
+
+
+
+
+
