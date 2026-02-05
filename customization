@@ -1,0 +1,61 @@
+package extensions;
+
+import java.awt.*;
+import java.util.ArrayList;
+
+
+public class MiniWindow2 {
+
+public static void main(String[] args) {
+         javax.swing.JFrame frame = new javax.swing.JFrame("Margette's Mini Window"); // Initialize frame
+    
+         javax.swing.JLabel label = new javax.swing.JLabel("I am levelling up my project!", javax.swing.SwingConstants.CENTER);
+    
+         frame.add(label);
+    
+         frame.setSize(900, 600);
+
+         frame.setLocationRelativeTo(null); // Center the window on the screen
+
+         frame.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
+
+         frame.getContentPane().setBackground(new java.awt.Color(235, 210, 255));
+
+         frame.setLayout(null);
+
+         javax.swing.JLabel userLabel = new javax.swing.JLabel("Username:");
+            userLabel.setBounds(50, 50, 120, 30);
+            frame.add(userLabel);
+
+            javax.swing.JTextField userText = new javax.swing.JTextField();
+            userText.setBounds(180, 50, 200, 30);
+            frame.add(userText);
+
+            javax.swing.JLabel passLabel = new javax.swing.JLabel("Password:");
+            passLabel.setBounds(50, 100, 120, 30);
+            frame.add(passLabel);
+
+            javax.swing.JPasswordField passText = new javax.swing.JPasswordField();
+            passText.setBounds(180, 100, 200, 30);
+            frame.add(passText);
+
+            javax.swing.JButton loginButton = new javax.swing.JButton("Login");
+            loginButton.setBounds(180, 150, 100, 30);
+            frame.add(loginButton);
+            label.setFont(new java.awt.Font("Comic Sans MS", java.awt.Font.BOLD, 20));
+loginButton.setFont(new java.awt.Font("Comic Sans MS", java.awt.Font.PLAIN, 16));
+passLabel.setFont(new java.awt.Font("Comic Sans MS", java.awt.Font.BOLD, 16));
+passText.setFont(new java.awt.Font("Comic Sans MS", java.awt.Font.PLAIN, 16));
+userText.setFont(new java.awt.Font("Comic Sans MS", java.awt.Font.PLAIN, 16));
+userLabel.setFont(new java.awt.Font("Comic Sans MS", java.awt.Font.BOLD, 16));
+loginButton.setBackground(new java.awt.Color(200, 160, 255));
+loginButton.setForeground(java.awt.Color.WHITE);
+userLabel.setForeground(new java.awt.Color(130,80,180));
+passLabel.setForeground(new java.awt.Color(130,80,180));
+passText.setForeground(new java.awt.Color(130,80,180));
+userText.setForeground(new java.awt.Color(130,80,180));
+loginButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(150, 50, 200), 2, true));
+loginButton.setBorderPainted(false);
+loginButton.setFocusPainted(false);
+loginButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+loginButton.setToolTipText("Click to login"); 
